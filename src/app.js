@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 const testFileFunction = function (event) {
   event.preventDefault();
 
-  const fileA = event.srcElement[0].files[0];
-  const fileB = event.srcElement[1].files[0];
+  const fileA = event.target[0].files[0];
+  const fileB = event.target[1].files[0];
 
   console.dir(fileA);
   console.dir(fileB);
@@ -23,7 +23,8 @@ const testFileFunction = function (event) {
   readerA.addEventListener('loadend', (event) => {
     const text = event.target.result;
     const output = document.querySelector('#test-file');
-    output.textContent += text;
+    console.log(text);
+    output.textContent = text;
   });
 
   readerB.addEventListener('loadend', (event) => {
