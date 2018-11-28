@@ -32,4 +32,7 @@ const testFileFunction = function (event) {
     const output = document.querySelector('#test-file');
     output.textContent += text;
   });
+
+  const canvas = document.querySelector('#canvas');
+  
 }
