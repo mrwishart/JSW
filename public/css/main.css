@@ -50,7 +50,29 @@ section {
   margin-bottom: 0px;
 }
 
-#flex-container {
+.flex-container, .robot-info-container, .robot-info-column, .robot-info-row {
   display: flex;
   flex-wrap: wrap;
+  font-family: monospace;
+}
+
+ .robot-info-column {
+  height: 100%;
+  width: 50%;
+}
+
+.robot-info-row {
+  height: 50%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.robot-info-row p {
+  margin: auto;
+  padding-left: 5px;
+}
+
+.robot-info-column ul {
+  list-style-type: circle;
+  margin: 0px;
 }
