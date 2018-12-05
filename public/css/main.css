@@ -1,3 +1,33 @@
-canvas {
+article, aside {
+  margin: 5px;
+  height: 400px;
+  display: inline-block;
+}
+
+article, section {
+  width: 400px;
   border: 1px solid black;
+}
+
+aside {
+  width: 300px;
+  padding: 1px;
+}
+
+section {
+  width: calc(100% - 4px);
+  height: calc(50% - 4px);
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#robot1 {
+  margin-top: 0px;
+  margin-bottom: 4px;
+}
+
+#robot2 {
+  margin-top: 4px;
+  margin-bottom: 0px;
 }
