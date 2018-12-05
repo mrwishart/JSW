@@ -29,15 +29,20 @@ LoadScreen.prototype.loadFile = function (file) {
   fileReader.readAsText(file);
 
   fileReader.addEventListener('loadend', (event) => {
+    this.element.innerHTML = '';
+
     const fileContent = event.target.result;
     const robotName = this.removeExtension(file.name);
+    const robotID = this.element.id;
 
-    const robotObject = {
+    const robot = {
+      id: robotID,
       name: robotName,
       code: fileContent
     };
 
-    this.element.innerHTML = '';
+    PubSub.publish(`LoadScreen:${robotID}SuccessfullyLoaded`, robot);
+
   })
 };
 
