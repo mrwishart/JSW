@@ -51,13 +51,10 @@ RobotInfo.prototype.createViewer = function (name) {
   shieldsElement.textContent = "Shields: ";
   const damageElement = document.createElement('li');
   damageElement.textContent = "Damage: ";
-  const clockedElement = document.createElement('li');
-  clockedElement.textContent = "Cloaked: ";
 
   listContainer.appendChild(energyElement);
   listContainer.appendChild(shieldsElement);
   listContainer.appendChild(damageElement);
-  listContainer.appendChild(clockedElement);
 
   const noOfAtts = listContainer.childElementCount;
   const heightPerAtt = 97/noOfAtts;
@@ -66,7 +63,6 @@ RobotInfo.prototype.createViewer = function (name) {
   energyElement.style.padding = `${padding}px 0px`;
   shieldsElement.style.padding = `${padding}px 0px`;
   damageElement.style.padding = `${padding}px 0px`;
-  clockedElement.style.padding = `${padding}px 0px`;
 
   infoContainer.appendChild(listContainer);
 
