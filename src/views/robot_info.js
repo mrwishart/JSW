@@ -52,6 +52,14 @@ RobotInfo.prototype.createViewer = function (name) {
   const damageElement = document.createElement('li');
   damageElement.textContent = "Damage: ";
 
+  const deleteButton = document.createElement('button');
+  deleteButton.classList.add(this.element.id);
+  deleteButton.classList.add('robot-delete-button');
+  deleteButton.textContent = 'X';
+  deleteButton.addEventListener('click', (event) => {
+    this.deleteRobot(event.target);
+  })
+
   listContainer.appendChild(energyElement);
   listContainer.appendChild(shieldsElement);
   listContainer.appendChild(damageElement);
@@ -68,7 +76,14 @@ RobotInfo.prototype.createViewer = function (name) {
 
   this.element.appendChild(nameAndIconContainer);
   this.element.appendChild(infoContainer);
+  iconElement.appendChild(deleteButton);
 
+};
+
+RobotInfo.prototype.deleteRobot = function (button) {
+  this.element.innerHTML = '';
+  const robotID = button.classList[0];
+  PubSub.publish(`RobotInfo:${robotID}Unloaded`);
 };
 
 RobotInfo.prototype.nameFontSize = function (name) {

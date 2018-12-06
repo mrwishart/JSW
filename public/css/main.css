@@ -76,3 +76,14 @@ section {
   list-style-type: circle;
   margin: 0px;
 }
+
+.robot-delete-button {
+  height: 20px;
+    width: 20px;
+    padding: 0px;
+    border: 0px;
+    margin-top: 28.5px;
+    background-color: darkred;
+    font-size: 18px;
+    color: honeydew;
+}

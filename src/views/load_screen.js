@@ -43,6 +43,8 @@ LoadScreen.prototype.loadFile = function (file) {
 
     PubSub.publish(`LoadScreen:${robotID}SuccessfullyLoaded`, robot);
 
+    PubSub.subscribe(`RobotInfo:${robotID}Unloaded`, () => this.render());
+
   })
 };
 
